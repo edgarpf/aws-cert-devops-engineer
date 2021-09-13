@@ -8,3 +8,4 @@
   *  ***Rolling with additional batch*** – Deploy the new version in batches, but first launch a new batch of instances to ensure full capacity during the deployment process.
   *  ***Immutable*** – Deploy the new version to a fresh group of instances by performing an immutable update.
   *  ***Blue/Green*** - Deploy the new version to a separate environment, and then swap CNAMEs of the two environments to redirect traffic to the new version instantly.
+* With ***AWSCodeCommitPowerUser*** policy a member can have read/write access on an repository but can not delete CodeCommit repositories.
