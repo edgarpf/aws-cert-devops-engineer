@@ -29,3 +29,8 @@
 * Your CodeCommit repository and AWS SNS topic must be on the same region for the triggers to work.
 * With Amazon GuardDuty you can detect compromised EC2 instances as well as detect malicious activity within your AWS environment.
 * Create a CloudWatch Events rule that is scheduled to run at midnight. Set the target to directly call the EC2 CreateSnapshot API to create a snapshot of EBS volumes. You do not need to use Lambda.
+* Use the EB CLI ***eb create --cfg savedconfig*** to apply a saved configuration in an environment.
+* Access logging is an optional feature of Elastic Load Balancing that is disabled by default.
+* To clone the repository properly using the HTTPS connection attach the IAM policy AWSCodeCommitPowerUser to the IAM user through the AWS IAM console and in the IAM console, generate HTTPS Git credentials for AWS CodeCommit and download credentials to a .CSV file.
+* For the repository event of deleting branches, create a trigger in CodeCommit to an Amazon SNS topic to provide notifications to users. You do not need CloudWatch.
+* 
