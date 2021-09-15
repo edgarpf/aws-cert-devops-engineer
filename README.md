@@ -33,4 +33,7 @@
 * Access logging is an optional feature of Elastic Load Balancing that is disabled by default.
 * To clone the repository properly using the HTTPS connection attach the IAM policy AWSCodeCommitPowerUser to the IAM user through the AWS IAM console and in the IAM console, generate HTTPS Git credentials for AWS CodeCommit and download credentials to a .CSV file.
 * For the repository event of deleting branches, create a trigger in CodeCommit to an Amazon SNS topic to provide notifications to users. You do not need CloudWatch.
-* 
+* Use a ***Container command*** within an Elastic Beanstalk configuration file to execute the script, ensuring that the ***leader only*** flag is set to true. With that you can assure that a script will be executed only once in a group of instances.
+* Ensure that the Amazon EBS volumes restored from snapshots have been pre-warmed by reading all the blocks before a test.
+* You can use an AWS CloudFormation stack policy to deny updates. 
+* You need to create an instance profile and associate it with that specific role to use a IAM Role.
