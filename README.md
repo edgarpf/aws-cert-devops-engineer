@@ -51,8 +51,8 @@
 * The settings in the .ebextensions folder cannot override that in the EB CLI command. 
 * To have the least amount of downtime, the ideal way is to create a blue-green deployment environment and then use the Swap URL feature to swap environments for the new deployment and then do the swap back, in case the deployment fails. The AWS Documentation mentions the following on the SWAP URL feature of Elastic Beanstalk.
 * In .ebextensions files, within each package manager, package installation order isn't guaranteed.
-* Use the Deletion policy of the cloudformation template to ensure a snapshot is created of the relational database.
+* Use the Deletion policy of the CloudFormation template to ensure a snapshot is created of the relational database.
 * You can use intrinsic functions only in specific parts of a template. Currently, you can use intrinsic functions in resource properties, outputs, metadata attributes, and update policy attributes.
 * You can have one single dashboard to report metrics to CloudWatch from different regions.
 * You can have one Opswork stack and multiple layers.
-* With ***list-stacks*** you will see all the cloudformation stacks that have been deleted earlier.
+* With ***list-stacks*** command in CloudFormation you will see all the cloudformation stacks that have been deleted earlier.
