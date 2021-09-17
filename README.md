@@ -37,3 +37,22 @@
 * Ensure that the Amazon EBS volumes restored from snapshots have been pre-warmed by reading all the blocks before a test.
 * You can use an AWS CloudFormation stack policy to deny updates. 
 * You need to create an instance profile and associate it with that specific role to use a IAM Role.
+* Configure these CloudWatch alarms to treat missing data points as “ignore” so that “INSUFFICIENT_DATA” does not show up.
+* You can configure the Auto Scaling group to send a notification to an SNS topic whenever instances fail to terminate.
+* You can modify the EC2 instance type. Select the relevant launch configuration and choose “Actions -> Copy launch configuration”. Modify the instance type accordingly in the new configuration. Select the new launch configuration for the Auto Scaling Group.
+* If your Auto Scaling Group scales up too much and stays scaled up even when traffic decreases calculate the bottleneck or constraint on the compute layer, select that as the new metric, and set the CloudWatch metric thresholds to the bounding values that begin to affect response latency.
+* Use a placement group for your instances, so the instances are physically near each other in the same Availability Zone.
+* Use AWS Directory Service AD Connector. With that you will integrate with your existing identity management system running on Microsoft Active Directory.
+* To change instance type in a ASG create a new launch configuration with the new instance type, attach it to the existing autoscaling group and increase the number of desired instances of ASG to launch new instances. When new instances are in healthy status, decrease the number of desired instances to delete instances with the old instance type.
+* It takes time for the ELB to register the instances. Hence there is a small time frame before your instances can start receiving traffic.
+* While creating Deployment Group In CodeDeploy, users can select the targets via Tags and lists. The targets can be any combination of Amazon EC2 Auto Scaling groups, Amazon EC2 instances or On-premises instances.
+* The data in both DynamoDB table (at rest) and DynamoDB Streams is fully encrypted.
+* The priorities in Elastic Beanstalk are “configurations in AWS console” > “configurations in .ebextensions” > “default value”.
+* The settings in the .ebextensions folder cannot override that in the EB CLI command. 
+* To have the least amount of downtime, the ideal way is to create a blue-green deployment environment and then use the Swap URL feature to swap environments for the new deployment and then do the swap back, in case the deployment fails. The AWS Documentation mentions the following on the SWAP URL feature of Elastic Beanstalk.
+* In .ebextensions files, within each package manager, package installation order isn't guaranteed.
+* Use the Deletion policy of the cloudformation template to ensure a snapshot is created of the relational database.
+* You can use intrinsic functions only in specific parts of a template. Currently, you can use intrinsic functions in resource properties, outputs, metadata attributes, and update policy attributes.
+* You can have one single dashboard to report metrics to CloudWatch from different regions.
+* You can have one Opswork stack and multiple layers.
+* With ***list-stacks*** you will see all the cloudformation stacks that have been deleted earlier.
