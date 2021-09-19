@@ -59,7 +59,7 @@
 * An AWS Lambda hook is one Lambda function specified with a string on a new line after the name of the lifecycle event. Each hook is executed once per deployment. Here are descriptions of the hooks available for use in your AppSpec file:
   * ***BeforeAllowTraffic*** – Use to run tasks before traffic is shifted to the deployed Lambda function version.
   * ***AfterAllowTraffic*** – Use to run tasks after all traffic is shifted to the deployed Lambda function version.
-  * If you enable the IAM Capability on the CodePipeline configuration for the Deploy CloudFormation stage action you can solve the ***InsufficientCapabilitiesException*** problem.
-  * If we encrypt S3 using KMS, we may get throttled at 10000 objects per second.
-  * Create a file named ***.ebextensions/alb.config*** in your code repository and add an *option_settings*** block for which you will specify the Rules for the key ***aws:elbv2:listener:default***. Push your code and let the CodePipeline run. With that you can redirect HTTP to HTTPS.
-  * Change the ***runOrder*** of your actions in CodePipeline so that they have the same value and you wll reduce build time.
+* If you enable the IAM Capability on the CodePipeline configuration for the Deploy CloudFormation stage action you can solve the ***InsufficientCapabilitiesException*** problem.
+* If we encrypt S3 using KMS, we may get throttled at 10000 objects per second.
+* Create a file named ***.ebextensions/alb.config*** in your code repository and add an *option_settings*** block for which you will specify the Rules for the key ***aws:elbv2:listener:default***. Push your code and let the CodePipeline run. With that you can redirect HTTP to HTTPS.
+* Change the ***runOrder*** of your actions in CodePipeline so that they have the same value and you wll reduce build time.
