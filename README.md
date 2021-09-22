@@ -66,3 +66,7 @@
 * AWS Lambda has a max concurrent execution of 1000, while API gateway has a max concurrent execution of 10000. By integrating API Gateway and Step Functions together, you bypass any limit Lambda would have imposed on you.
 * The variable ***CODEBUILD_SOURCE_VERSION*** is exposed at runtime directly within CodeBuild and represents the branch name of the code being tested for CodeCommit. 
 * Create ECS task definitions that include the ***awslogs*** driver. Set an IAM instance role on the EC2 instance with the necessary permissions to write to CloudWatch log. With that you will ensure all application logs can be stored in CloudWatch logs.
+* When creating a new task definition for your ECS service, ensure to add the sha256 hash in the full image name so that ECS pulls the correct image every time.
+* Pull the new AMI IDs using an AWS Lambda-backed custom resource in the CloudFormation template. Reference the AMI ID that the custom resource fetched in the launch configuration resource block. This will avoid manually update CloudFormation templates for every new available AMI of an application.
+* You can use the console, AWS CLI, or AWS CloudFormation to add cross-region actions in pipelines. If you use the console to create a pipeline or cross-region actions, default artifact buckets are configured by CodePipeline in the Regions where you have actions. 
+* Restart the ECS agent with you noticed that the new tasks are occasionally running the old image of the application.
