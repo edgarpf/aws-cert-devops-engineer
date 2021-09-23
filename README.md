@@ -70,3 +70,13 @@
 * Pull the new AMI IDs using an AWS Lambda-backed custom resource in the CloudFormation template. Reference the AMI ID that the custom resource fetched in the launch configuration resource block. This will avoid manually update CloudFormation templates for every new available AMI of an application.
 * You can use the console, AWS CLI, or AWS CloudFormation to add cross-region actions in pipelines. If you use the console to create a pipeline or cross-region actions, default artifact buckets are configured by CodePipeline in the Regions where you have actions. 
 * Restart the ECS agent with you noticed that the new tasks are occasionally running the old image of the application.
+* By default, CodeDeploy removes all files on the deployment location and the auto rollback will deploy the old revision files cleanly. You can choose “Retain the content” option for future deployments so that only the files included in the old app revision will be deployed and the existing contents will be retained.
+* Automatically detect SSH brute force or malware attacks by enabling Amazon GuardDuty in every account.
+* To instrument the application to detect where high latencies are occurring and to determine the specific services and paths impacting application performance produce a Docker image that runs the X-Ray daemon. Upload the image to a Docker image repository, and then deploy it to your Amazon ECS cluster. Configure the network mode settings and port mappings in your task definition file to allow traffic on UDP port 2000.
+* Add ***--force-new-deployment*** option to the AWS CLI command so that ECS re-deploys your cluster pulling the new image.
+* Diagnose and troubleshoot problems on your Amazon EC2 Linux and Windows Server instances using the EC2Rescue tool. Automatically run the tool by using the Systems Manager Automation and the ***AWSSupport-ExecuteEC2Rescue*** document.
+Use Amazon Inspector for automated security assessment to help improve the security and compliance of your applications.
+* CodeDeploy can reach timeout while waiting for a long-running script to finish. 
+* Amazon GuardDuty offers threat detection that enables you to continuously monitor and protect your AWS accounts and workloads. 
+* GSI does not support strong read consistency.
+* You can not add a local secondary index to an already existing table.
