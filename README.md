@@ -72,7 +72,6 @@
 * By default, CodeDeploy removes all files on the deployment location and the auto rollback will deploy the old revision files cleanly. You can choose “Retain the content” option for future deployments so that only the files included in the old app revision will be deployed and the existing contents will be retained.
 * To instrument the application to detect where high latencies are occurring and to determine the specific services and paths impacting application performance produce a Docker image that runs the X-Ray daemon. Upload the image to a Docker image repository, and then deploy it to your Amazon ECS cluster. Configure the network mode settings and port mappings in your task definition file to allow traffic on UDP port 2000.
 * Use Amazon Inspector for automated security assessment to help improve the security and compliance of your applications.
-* CodeDeploy can reach timeout while waiting for a long-running script to finish. 
 * Amazon GuardDuty offers threat detection that enables you to continuously monitor and protect your AWS accounts and workloads. 
 * GSI does not support strong read consistency.
 * You can not add a local secondary index to an already existing table.
