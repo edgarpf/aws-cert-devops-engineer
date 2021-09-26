@@ -19,7 +19,6 @@
 * Use Amazon Macie to monitor and detect usage patterns on your S3 data logs.
 * Deploy your app using Traffic shifting with AWS Lambda aliases to create canary deployments.
 * You can create an IAM group for team members and another IAM group for the team leader, both with AWSCodeCommitPowerUser policy attached. Attach another IAM policy to the team members' group that denies Push, Delete, and Merge APIs of CodeCommit on the master branch.
-* By default, CodeDeploy removes all files on the deployment location and the auto rollback will deploy the old revision files cleanly. You can choose “Retain the content” option for future deployments so that only the files included in the old app revision will be deployed and the existing contents will be retained.
 * Automatically detect SSH brute force or malware attacks by enabling Amazon GuardDuty in every account.
 * Produce a Docker image that runs the X-Ray daemon. Upload the image to a Docker image repository, and then deploy it to your Amazon ECS cluster. Configure the network mode settings and port mappings in your task definition file to allow traffic on UDP port 2000. With that you instrument the application to detect where high latencies are occurring and to determine the specific services and paths impacting application performance.
 * Add ***--force-new-deployment*** option to the AWS CLI command so that ECS re-deploys your cluster pulling a new image.
